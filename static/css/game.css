@@ -1,0 +1,152 @@
+html{
+	height: 100%;
+}
+
+body {
+    margin: 0 auto;
+    background-color: #67945f;
+    height:100%;
+}
+
+#overlay {
+	visibility: hidden;
+	position: absolute;
+	top: 20px;
+	bottom: 20px;
+	width:88%;
+	margin-left: 6%;
+	text-align:center;
+	background-color: #000;
+	z-index: 1000;
+	overflow-y: scroll;
+	box-shadow: -1px 2px 15px -1px #000;
+}
+ 
+#overlay div {
+	margin: auto;
+	background-color: #fff;
+	padding:15px;
+}
+ 
+#modal h3 {
+	display: inline;
+}
+ 
+#modal p {
+	text-align: left;
+}
+ 
+#modal p img {
+	float: left;
+	width: 60px;
+	height: auto;
+	padding-right: 15px;
+	padding-bottom: 15px;
+}
+ 
+.close {
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	background-image: url(assets/images/close.png);
+	right: 20px;
+	top: 20px;
+	border: none;
+}
+
+#state {
+  color: rgb(200,200,200);
+  font-family: Monaco;
+  font-size: 18px;
+  line-height: 1em;
+  padding: 20px;
+  text-align: center;
+}
+
+#progress {
+  font-size: 50px;
+  left: 50%;
+  letter-spacing: 0.1em;
+  margin: -25px 0 0 -100px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 200px;
+}
+
+#progressbar {
+  left: 10%;
+  position: absolute;
+  text-align: center;
+  top: 55%;
+  right: 10%;
+  
+  .bar {
+    @include box-shadow(cyan 0 0 10px 1px);
+    @include transition(all 300ms);
+    background-color: cyan;
+    height: 1px;
+    display: inline-block;
+    width: 0%;
+  }
+  
+  .bar.complete {
+    @include box-shadow(rgba(255, 0, 0, 0) 0 0 10px 10px);
+  }
+}
+.my-flex-container {
+    border: 2px solid green;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+#gameDiv {
+	background: #fff;
+	border: 5px solid black;
+}
+
+#statBar {
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+.character-sheet .exp-bar{
+	width:100%;
+	height:10px;
+	border:1px solid #0e4399;
+}
+
+.character-sheet .exp-bar .inner{
+	width:0;
+	height:10px;
+	border-right: 1px solid #000;
+	background: #0e4399;
+}
+
+.shop-item-container {
+	height: 100%;
+	overflow-y: auto;
+	margin: 0;
+	padding: 0;
+	border: 2px solid #ccc;
+	font-size: 16px;
+	font-family: Arial, sans-serif;
+	-webkit-overflow-scrolling: touch;
+}
+
+.shop-item {
+	padding: 10px 20px;
+	border-bottom: 1px solid #ccc;
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	&:nth-child(even) {
+		background: #f8f8f8;
+	}
+}
+
+.shop-item-selected {
+	background-color: rgba(255,255,255,0.4);
+}

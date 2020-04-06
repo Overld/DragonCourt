@@ -1,0 +1,14 @@
+{
+    "db": {
+        "host": process.env.DB_HOST,
+        "user": process.env.DB_USER,
+        "password": process.env.DB_PASS,
+        "database": process.env.DB_DB
+    },
+    "ip": process.env.IP,
+    "host": process.env.HOST,
+    "port": process.env.PORT,
+    "root": process.env.ROOTPATH,
+    "secret": process.env.SECRET,
+    "production": process.env.PRODUCTION
+}

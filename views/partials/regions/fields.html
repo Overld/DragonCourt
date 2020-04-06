@@ -1,0 +1,41 @@
+<div style="background-color:#fa898c" class="h-100 region">
+	<div class="col-12">
+		<div class="row">
+			<div class="col-6"><span style="font-size:1.3em">The Fields Near Salamander Township</span></div>
+			<div class="col-6 mt-4 text-center">
+				<div class="region-change" data-id="town">
+					<img class="img-fluid" src="/images/game/regions/to_town.jpg"><br>To Town
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6 mt-2 offset-2 text-center">
+				<div class="shop" data-id="healer">
+					<img class="img-fluid" src="/images/game/shops/healer.jpg"><br>Healer's Tower
+				</div>
+			</div>
+			<div class="col-6 text-center">
+				<div class="quest" data-id="fields">
+					<img class="img-fluid"src="/images/game/fields_quest.jpg"><br>Quest
+				</div>
+			</div>
+		</div>
+		
+		{{#iff lvl ">" 8}}
+		<div class="row">
+			<div class="col-6 mt-5 text-center">
+				<div class="region-change" data-id="forest">
+					<img class="img-fluid" src="/images/game/regions/to_forest.jpg"><br>To Forest
+				</div>
+			</div>
+			{{#iff lvl ">" 12}}
+			<div class="col-6 mt-5 text-center">
+				<div class="region-change" data-id="mounds">
+					<img class="img-fluid" src="/images/game/shops/trade.jpg"><br><br>Goblin Mounds
+				</div>
+			</div>
+			{{/iff}}
+		</div>
+		{{/iff}}
+	</div>
+</div>

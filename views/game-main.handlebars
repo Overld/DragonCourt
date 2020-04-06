@@ -1,0 +1,20 @@
+<!-- Game Area -->
+<div class="row h-100 align-items-center justify-content-between">
+	<div class="col-lg-8 col-sm-12 col-md-12">
+		<div id="gameDiv" style="height:40em;">
+		
+		</div>
+		<div id="statBar" style="height:3em;background-color:#333;">
+		
+		</div>
+	</div>
+	<div class="col-lg-4 d-none d-lg-block">
+		{{> chat }}
+	</div>
+</div>
+<script>
+window.onload = function(){
+	var app = new App();
+	app.start();
+}
+</script>

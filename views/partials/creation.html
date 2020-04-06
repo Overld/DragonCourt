@@ -1,0 +1,162 @@
+<div class="row">
+	<div class="col text-center">
+		<h2>Character Creation</h2>
+	</div>
+</div>
+<div class="row">
+	<div class="col text-center">
+		<span id="background">{{backstory}}</span>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		&nbsp;
+	</div>
+</div>
+<div class="row">
+	<div class="col text-center">
+		<span style="font-size: 2em;">Free Points: <span id="freePts">{{freePts}}</span></span>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		&nbsp;
+	</div>
+</div>
+<div class="row">
+	<div class="col text-center">
+		Cost: 3
+	</div>
+</div>
+<div class="row justify-content-center">
+	<div class="col-3 text-center">
+		<div class="row">
+			<div class="col">
+				Guts
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<span id="gutsStat">0</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<a href="#" data-type="guts" data-inc="plus" class="creationStatClick plus"><img class="img-fluid" src="/images/game/buttons/plus_normal.png"></a>
+			</div>
+			<div class="col-6">
+				<a href="#" data-type="guts" data-inc="minus" class="creationStatClick minus"><img class="img-fluid" src="/images/game/buttons/minus_normal.png"></a>
+			</div>
+		</div>
+	</div>
+	<div class="col-3 text-center">
+		<div class="row">
+			<div class="col">
+				Wits
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<span id="witsStat">0</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<a href="#" data-type="wits" data-inc="plus" class="creationStatClick plus"><img class="img-fluid" src="/images/game/buttons/plus_normal.png"></a>
+			</div>
+			<div class="col-6">
+				<a href="#" data-type="wits" data-inc="minus" class="creationStatClick minus"><img class="img-fluid" src="/images/game/buttons/minus_normal.png"></a>
+			</div>
+		</div>
+	</div>
+	<div class="col-3 text-center">
+		<div class="row">
+			<div class="col">
+				Charm
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<span id="charmStat">0</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<a href="#" data-type="charm" data-inc="plus" class="creationStatClick plus"><img class="img-fluid" src="/images/game/buttons/plus_normal.png"></a>
+			</div>
+			<div class="col-6">
+				<a href="#" data-type="charm" data-inc="minus" class="creationStatClick minus"><img class="img-fluid" src="/images/game/buttons/minus_normal.png"></a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		&nbsp;
+	</div>
+</div>
+<div class="row justify-content-center">
+	<div class="col-6">
+		<div class="row">
+			<div class="col text-center">
+				Choose Class
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<input class="creationClass" type="radio" name="class" id="peasantCreationClass" value="peasant" checked> Peasant 0p
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<input class="creationClass" type="radio" name="class" id="nobleCreationClass" value="noble"> Noble 12p
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<input class="creationClass" type="radio" name="class" id="warriorCreationClass" value="warrior"> Warrior 8p
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<input class="creationClass" type="radio" name="class" id="wizardCreationClass" value="wizard"> Wizard 9p
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<input class="creationClass" type="radio" name="class" id="traderCreationClass" value="trader"> Trader 10p
+			</div>
+		</div>
+	</div>
+	<div class="col-6">
+		<div class="row">
+			<div class="col text-center">
+				Starting Cash<br>
+				1p = $25
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				$<span id="cashStat">25</span>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-6 text-center">
+				<a href="#" data-type="cash" data-inc="plus" class="creationStatClick plus"><img class="img-fluid" src="/images/game/buttons/plus_normal.png"></a>
+			</div>
+			<div class="col-6 text-center">
+				<a href="#" data-type="cash" data-inc="minus" class="creationStatClick minus"><img class="img-fluid" src="/images/game/buttons/minus_normal.png"></a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		&nbsp;
+	</div>
+</div>
+<div class="row">
+	<div class="col text-center">
+		<input type="submit" id="creationSubmit" name="submit" value="Create!" class="btn btn-secondary">
+	</div>
+</div>

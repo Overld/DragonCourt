@@ -1,0 +1,9 @@
+var Blurbs = {
+	court: ["Give me a good jape.", "Give me a good reason.", "Have you seen Queen Beth?", "I'm getting bored.", "OFF WITH HIS HEAD!", "Show me something special.", "Tell me a story.", "What a clever little man.", "Where have you been?", "Why should I listen?", "You are boring me."],
+	healer: ["Alms for the poor?","Be brave like Queen Beth.","Can you spare some marks?","Care for a massage?","How may I aid thee?","Let me heal thy aches.","Please let me help.","Share with the poor.","Thou art distressed.","Thou art disturbed.","Tithe for thy soul."],
+	tavern: ["*Sniff* *Sniff* (Gulp)", "Beer is my friend.", "Hixxup! Excuse me.", "Huh? You say something?", "I'm kinda sleepy.", "I'm so happy.", "I love to drink.", "Queen Beth who?", "This job is great.", "You're my best friend."],
+	weapons: ["Buy something sharp.", "Elf Bows are fast.", "Greetings Friend.", "How are you today?", "My joints are aching.", "Queen Beth is strong...", "See you at the Tavern.", "Want to arm wrestle?", "Welcome to my Shop.", "You think Aileen's cute?"],
+	armor: ["Armour is good...", "Back fer more?", "C'mon sexy, smile.", "Cover ever'thing", "Hey there, sexy.", "Hiya Sonny!", "Need some shoes?", "Queen Beth is my hero.", "Watcha Got?", "What's your sign?"],
+	trade: ["Aileen scares me.", "Hello Again.", "How are you?", "How's the family?", "I like Queen Beth.", "Need some help?", "Need something special?", "Nice weather today.", "The tavern is noisy.", "Want a kiss?", "You look healthy."],
+	smithy: ["Acch! What is it?", "Elf Bows? Bah!", "FIX IT!? Yure Nuts!", "Gak! I hate Elf Bows!", "Here's a pretty piece.", "I spit on Mythril.", "REPAIR!? Smeg off!", "Shades! Go away!", "Think as you're tough?", "This is art, laddy.", "This is me finest work.", "Well, piss on me.", "What now!", "What the hell you want?", "You're no Queen Beth."]
+};

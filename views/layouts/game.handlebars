@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		
+        <link rel="stylesheet" href="/css/game.css" type="text/css" media="all">
+        <link rel="stylesheet" href="/css/chat.css" type="text/css" media="all">
+        
+        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+		
+        <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.js"></script>
+        
+        <script type="text/javascript" src="/js/vendor/socket-io-client.js"></script>
+        <script>
+        Handlebars.registerHelper('iff', function(a, operator, b, opts) {
+			var bool = false;
+			switch(operator) {
+			   case '==':
+				   bool = a == b;
+				   break;
+			   case '>':
+				   bool = a > b;
+				   break;
+			   case '<':
+				   bool = a < b;
+				   break;
+			   default:
+				   throw "Unknown operator " + operator;
+			}
+		 
+			if (bool) {
+				return opts.fn(this);
+			} else {
+				return opts.inverse(this);
+			}
+		});
+		var Socket = io.connect('181.215.182.131:33030');
+        </script>
+        <script src="/js/sw.js"></script>
+        <script src="/js/preload.js"></script>
+        <script>
+        for(var i = 0; i < imgs.length; i++){
+			var preImg = $('<link rel="preload" href="'+imgs[i]+'" as="image">');
+			$('head').append(preImg);
+        }
+        </script>
+        <script src="/js/lib/Chat.js"></script>
+        <script src="/js/ajax.js"></script>
+        <script src="/js/dc.js"></script>
+        <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
+        <script src="/js/lib/Creation.js"></script>
+        <script src="/js/lib/User.js"></script>
+        <script src="/js/lib/Player.js"></script>
+        <script src="/js/lib/Blurbs.js"></script>
+        <script src="/js/lib/Game.js"></script>
+        <script src="/js/lib/RegionFactory.js"></script>
+        <script src="/js/lib/regions/Azteca.js"></script>
+        <script src="/js/lib/regions/Brasil.js"></script>
+        <script src="/js/lib/regions/Castle.js"></script>
+        <script src="/js/lib/regions/Docks.js"></script>
+        <script src="/js/lib/regions/Fields.js"></script>
+        <script src="/js/lib/regions/Forest.js"></script>
+        <script src="/js/lib/regions/Market.js"></script>
+        <script src="/js/lib/regions/Mounds.js"></script>
+        <script src="/js/lib/regions/Mountains.js"></script>
+        <script src="/js/lib/regions/Shangala.js"></script>
+        <script src="/js/lib/regions/Town.js"></script>
+        <script src="/js/lib/Item.js"></script>
+        <script src="/js/lib/Equipment.js"></script>
+        <script src="/js/lib/Inventory.js"></script>
+        <script src="/js/lib/Encounter.js"></script>
+        <script src="/js/lib/Shop.js"></script>
+        <script src="/js/lib/shops/Weapons.js"></script>
+        <script src="/js/lib/shops/Armor.js"></script>
+        <script src="/js/lib/shops/Tavern.js"></script>
+        <script src="/js/lib/shops/Trade.js"></script>
+        <script src="/js/app.js"></script>
+    </head>
+    <body>
+		<div class="container-fluid mt-auto h-100">
+        {{{body}}}
+        </div>
+		<script>
+		if('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/sw.js')
+			.then(function() {
+				console.log('Service Worker Registered');
+			});
+		}
+		
+		function setCookie(name,value,days) {
+			var expires = "";
+			if (days) {
+				var date = new Date();
+				date.setTime(date.getTime() + (days*24*60*60*1000));
+				expires = "; expires=" + date.toUTCString();
+			}
+			document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+		}
+		function getCookie(name) {
+			var nameEQ = name + "=";
+			var ca = document.cookie.split(';');
+			for(var i=0;i < ca.length;i++) {
+				var c = ca[i];
+				while (c.charAt(0)==' ') c = c.substring(1,c.length);
+				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+			}
+			return null;
+		}
+		function eraseCookie(name) {   
+			document.cookie = name+'=; Max-Age=-99999999;';  
+		}
+		</script>
+    </body>
+</html>

@@ -1,0 +1,3 @@
+{{#each items}}
+				<li data-id="{{id}}" class="shop-item">{{name}} {{#iff attack ">" 0}} + {{attack}}a{{/iff}}{{#iff attack "<" 0}}{{attack}}a{{/iff}}{{#iff defend ">" 0}}+{{defend}}d{{/iff}}{{#iff defend "<" 0}}{{defend}}d{{/iff}} - ${{cost}}</li>
+			{{/each}}

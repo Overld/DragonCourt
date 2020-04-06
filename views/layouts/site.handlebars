@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<title>{{pageTitle}} &bull; Dragon Court</title>
+
+	<meta charset="iso-8859-1">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/js/vendor/socket-io-client.js"></script>
+	<script type="text/javascript" src="/js/dc.js"></script>
+	<script type="text/javascript" src="/js/lib/User.js"></script>
+	<script>
+	var Socket = io.connect();
+	</script>
+	<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&autoLogAppEvents=1&version=v2.12&appId=199922540602335';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-100 flex-column">
+	<header class="masthead mb-auto">
+		<div class="inner">
+			<h3 class="masthead-brand">Dragon Court</h3>
+			<nav class="nav nav-masthead justify-content-center">
+				<a class="nav-link active" href="/">Main</a>
+				<!--
+				<a class="nav-link" href="/login/">Login</a>
+				<a class="nav-link" href="/register/">Register</a>
+				-->
+			</nav>
+		</div>
+	</header>
+	<main role="main" class="inner cover">
+		{{{body}}}
+	</main>
+	
+	<!-- Footer -->
+	<footer class="mastfoot mt-auto">
+		<p class="lead">Copyright &copy; 2019 - All Rights Reserved - <a href="#">Dragon Court Mobile</a></p>
+		<div class="fb-like" data-href="https://www.facebook.com/DragonCourtMobile/" data-colorscheme="dark" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
+		<p><a href="https://www.facebook.com/DragonCourtMobile/">DCMobile on FB</a></p>
+		<p><a href="mailto:jason.allen.oneal@gmail.com">jason dot allen dot oneal at gmail dot com</a></p>
+	</footer>
+	<!-- Footer -->
+</div>
+
+<script>
+User.init();
+$(document).on('click', '#register', function(e){
+	e.preventDefault();
+	
+	var name = $('input[name=username]').val(),
+		email = $('input[name=email]').val(),
+		password = $('input[name=password]').val();
+	
+	if(name == '' || email == '' || password == ''){
+		// modal showing error
+	}else{
+		Socket.emit('user-register', {name: name, email: email, password: password});
+	}
+});
+
+$(document).on('click', '#login', function(e){
+	e.preventDefault();
+	
+	var name = $('input[name=username]').val(),
+		password = $('input[name=password]').val();
+	
+	if(name == '' || password == ''){
+		// modal showing error
+		console.log('login error');
+	}else{
+		Socket.emit('user-login', {name: name, password: password});
+	}
+});
+
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+function eraseCookie(name) {   
+    document.cookie = name+'=; Max-Age=-99999999;';  
+}
+</script>
+</body>
+</html>

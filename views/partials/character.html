@@ -1,0 +1,88 @@
+<div style="background-color:#d93030" class="h-100 character-sheet">
+	<div class="row">
+		<div class="col-10">
+			<div class="row">
+				<div class="col">{{nameAndRank}}</div>
+			</div>
+			<div class="row">
+				<div class="col">Level: {{level}}</div>
+			</div>
+			<div class="row">
+				<div class="col-6">Guts: {{guts}}</div>
+				<div class="col-6">Attack: {{attack}}</div>
+			</div>
+			<div class="row">
+				<div class="col-6">Wits: {{wits}}</div>
+				<div class="col-6">Defend: {{defend}}</div>
+			</div>
+			<div class="row">
+				<div class="col-6">Charm: {{charm}}</div>
+				<div class="col-6">Skill: {{skill}}</div>
+			</div>
+			<div class="row">
+				<div class="col-6">Quests: {{quests}}</div>
+				<div class="col-6">Exp:<div class="exp-bar"><div class="inner"></div></div></div>
+			</div>
+			<div class="row">
+				<div class="col-12">Guild = F:{{fighterSkill}}/{{fighterSkillMax}} M:{{magicSkill}}/{{magicSkillMax}} T:{{tradeSkill}}/{{tradeSkillMax}}</div>
+			</div>
+		</div>
+		<div class="col-2">
+			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-5">
+			<select size="15" style="width:100%" class="character-item-container">
+			{{#each items}}
+				<option value="{{id}}" class="character-item">{{name}} {{#iff attack ">" 0}} + {{attack}}a{{/iff}}{{#iff attack "<" 0}}{{attack}}a{{/iff}}{{#iff defend ">" 0}}+{{defend}}d{{/iff}}{{#iff defend "<" 0}}{{defend}}d{{/iff}} - ${{cost}}</option>
+			{{/each}}
+			</select>
+		</div>
+		<div class="col-7">
+			<div class="row">
+				<div class="col-12 text-center">Armament</div>
+			</div>
+			<div class="row">
+				<div class="col-12">H:{{head}}</div>
+			</div>
+			<div class="row">
+				<div class="col-12">B:{{body}}</div>
+			</div>
+			<div class="row">
+				<div class="col-12">F:{{feet}}</div>
+			</div>
+			<div class="row">
+				<div class="col-12">R:{{right}}</div>
+			</div>
+			<div class="row">
+				<div class="col-12">L:{{left}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+			Backpack: {{backpack}}
+		</div>
+		<div class="col-6">
+			<div class="row">
+				<div class="col-12 align-self-center">
+					<div class="btn-group" role="group" aria-label="Item buttons 1">
+						<button type="button" class="btn btn-secondary character-item-use">Use</button>
+						<button type="button" class="btn btn-secondary character-item-info">Info</button>
+						<button type="button" class="btn btn-secondary character-item-peer">Peer</button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 align-self-center">
+					<div class="btn-group" role="group" aria-label="Item buttons 2">
+						<button type="button" class="btn btn-secondary character-item-dump">Dump Slot</button>
+						<button type="button" class="btn btn-secondary character-item-recover" disabled>Oops</button>
+						<button type="button" class="btn btn-secondary character-exit">Exit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

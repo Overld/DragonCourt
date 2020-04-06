@@ -1,0 +1,90 @@
+<div style="background-color: #0a2200;color:#fff;height:100%">
+	<div class="row">
+		<div class="col-2">
+			<button id="shopExit" class="btn btn-secondary">Exit</button>
+		</div>
+		{{#if transactions}}
+		<div class="col-2">
+			<button id="shopTrade" class="btn btn-secondary">Trade</button>
+		</div>
+		<div class="col-4">
+			<div class="custom-control custom-radio custom-control-inline">
+				<input type="radio" id="shopBuy" name="shopTransType" class="custom-control-input" checked>
+				<label class="custom-control-label" for="shopBuy">Buy</label>
+			</div>
+			<div class="custom-control custom-radio custom-control-inline">
+				<input type="radio" id="shopSell" name="shopTransType" class="custom-control-input">
+				<label class="custom-control-label" for="shopSell">Sell</label>
+			</div>
+		</div>
+		{{/if}}
+		<div class="col">
+			&nbsp;
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-4">
+			<div class="row">
+				<div class="col-12">
+					<img src="/images/game/npc/{{type}}.jpg">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					&nbsp;
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					{{blurb}}
+				</div>
+			</div>
+			{{#if infoBtn}}
+			<div class="row">
+				<div class="col-12">
+					&nbsp;
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<button class="btn btn-secondary" id="shopInfo">Info</button>
+				</div>
+			</div>
+			{{/if}}
+			{{#if polishBtn}}
+			<div class="row">
+				<div class="col-12">
+					&nbsp;
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<button class="btn btn-secondary" id="shopPolish">Polish $40</button>
+				</div>
+			</div>
+			{{/if}}
+			{{#if identifyBtn}}
+			<div class="row">
+				<div class="col-12">
+					&nbsp;
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<button class="btn btn-secondary" id="shopIdentify">Identify $40</button>
+				</div>
+			</div>
+			{{/if}}
+		</div>
+		<div class="col-8">
+			{{#if items}}
+			<ul class="shop-item-container" style="overflow:scroll-y;height:85%;">
+			{{#each items}}
+				<li data-id="{{id}}" class="shop-item">{{name}} {{#iff attack ">" 0}} + {{attack}}a{{/iff}}{{#iff attack "<" 0}}{{attack}}a{{/iff}}{{#iff defend ">" 0}}+{{defend}}d{{/iff}}{{#iff defend "<" 0}}{{defend}}d{{/iff}} - ${{cost}}</li>
+			{{/each}}
+			</ul>
+			{{/if}}
+		</div>
+	</div>
+</div>
